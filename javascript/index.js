@@ -125,4 +125,44 @@ makeBroccoli()
 
 
 // Bonus 2 - Promise all
-// ...
+
+const elem1 = new Promise ((resolve, reject) => {
+  setTimeout(() => resolve(document.querySelector("#brusselsSprouts").innerHTML += `<li>${brusselsSprouts[0]}</li>`), 
+  ),1000})
+const elem2 = new Promise ((resolve, reject) => {
+  setTimeout(() => resolve(document.querySelector("#brusselsSprouts").innerHTML += `<li>${brusselsSprouts[1]}</li>`),
+  ),1000})
+
+const elem3 = new Promise ((resolve, reject) => {
+  setTimeout(() => resolve(document.querySelector("#brusselsSprouts").innerHTML += `<li>${brusselsSprouts[2]}</li>`),
+  ),1000})
+
+const elem4 = new Promise ((resolve, reject) => {
+  setTimeout(() => resolve(document.querySelector("#brusselsSprouts").innerHTML += `<li>${brusselsSprouts[3]}</li>`),
+  ),1000})
+
+const elem5 = new Promise ((resolve, reject) => {
+  setTimeout(() => resolve(document.querySelector("#brusselsSprouts").innerHTML += `<li>${brusselsSprouts[4]}</li>`),
+  ),5000})
+    
+const elem6 = new Promise ((resolve, reject) => {
+  setTimeout(() => resolve(document.querySelector("#brusselsSprouts").innerHTML += `<li>${brusselsSprouts[5]}</li>`),
+  ),6000})
+  
+const elem7 = new Promise ((resolve, reject) => {
+  setTimeout(() => resolve(document.querySelector("#brusselsSprouts").innerHTML += `<li>${brusselsSprouts[6]}</li>`),
+  ),7000})
+
+const elem8 = new Promise ((resolve, reject) => {
+  setTimeout(() => resolve(document.querySelector("#brusselsSprouts").innerHTML += `<li>${brusselsSprouts[7]}</li>`),
+  ),8000})
+
+const elem9 = new Promise ((resolve, reject) => {
+  setTimeout(() => resolve(document.querySelector("#brusselsSprouts").innerHTML += `<li>${`Brussels sprouts are ready!`}</li>`),
+  ),9000}) 
+  document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
+
+
+  Promise.all( [elem1, elem2, elem3, elem4, elem5, elem6, elem7, elem8, elem9] )
+  .then((values) => console.log("values", values))
+  .catch((err)=> console.log("catch()", err));
